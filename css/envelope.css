@@ -1,0 +1,185 @@
+/* ENVELOPE OVERLAY */
+#envelope-overlay {
+  position: fixed;
+  inset: 0;
+  background: #fce4ec;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 1s ease;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#envelope-overlay.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ENVELOPE WRAP - responsive */
+#envelope-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 340 / 220;
+}
+
+.env-body {
+  position: absolute;
+  inset: 0;
+  background: #f8bbd0;
+  border-radius: 4px 4px 10px 10px;
+  border: 2px solid #f48fb1;
+  overflow: hidden;
+}
+
+.env-bottom {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 52%;
+  background: #f48fb1;
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+
+.env-left {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 50%; height: 61%;
+  background: #f06292;
+  clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+  opacity: 0.45;
+}
+
+.env-right {
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 50%; height: 61%;
+  background: #e91e8c;
+  clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+  opacity: 0.25;
+}
+
+/* FLAP */
+#env-flap {
+  position: absolute;
+  top: -2px; left: -2px; right: -2px;
+  height: 63%;
+  background: #f8bbd0;
+  border: 2px solid #f48fb1;
+  border-bottom: none;
+  clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+  transform-origin: top center;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
+}
+
+#env-flap.open {
+  transform: rotateX(180deg);
+}
+
+/* LABEL TRÊN BÌA */
+.env-label {
+  position: absolute;
+  top: 12%; left: 0; right: 0;
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+  padding: 0 10px;
+}
+
+.env-label .env-name {
+  font-family: Georgia, serif;
+  font-size: clamp(15px, 5vw, 20px);
+  color: #880e4f;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.env-label .env-date {
+  font-family: Georgia, serif;
+  font-size: clamp(11px, 3vw, 14px);
+  color: #ad1457;
+  margin-top: 6px;
+  letter-spacing: 2px;
+}
+
+/* HINT nhấn để mở */
+.env-hint {
+  position: absolute;
+  bottom: -36px;
+  left: 0; right: 0;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #ad1457;
+  animation: hintPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes hintPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* THƯ BAY RA */
+#env-letter {
+  position: absolute;
+  width: min(300px, 85vw);
+  background: white;
+  border-radius: 6px;
+  padding: 30px 24px;
+  text-align: center;
+  border: 1px solid #f48fb1;
+  box-shadow: 0 4px 20px rgba(233, 30, 99, 0.15);
+
+  top: 50%; left: 50%;
+  transform: translate(-50%, 10px);
+  opacity: 0;
+  z-index: 4;
+  pointer-events: none;
+
+  transition:
+    transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.7s ease,
+    width 0.8s ease,
+    height 0.8s ease,
+    border-radius 0.8s ease;
+}
+
+#env-letter.fly-out {
+  transform: translate(-50%, -160px);
+  opacity: 1;
+}
+
+#env-letter.expand {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  transform: translate(-50%, -50%);
+  top: 50%;
+}
+
+#env-letter .letter-name {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  color: #880e4f;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+#env-letter .letter-date {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  color: #ad1457;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+#env-letter .letter-msg {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  color: #c2185b;
+  line-height: 1.8;
+}

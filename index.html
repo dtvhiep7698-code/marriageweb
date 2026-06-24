@@ -1,1 +1,263 @@
-<h1>Hello Wedding</h1>
+<!-- 
+ Hiep Dang
+ 01/11/2026
+ -->
+ 
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/envelope.css" />
+  <link rel="stylesheet" href="css/scroll-reveal.css" />
+  <link rel="stylesheet" href="css/wish-bubbles.css" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- NHẠC NỀN - phát sau khi mở thiệp xong -->
+  <audio id="bg-music" src="assets/music/EM ĐỒNG Ý (I DO) - ĐỨC PHÚC x 911 x KHẮC HƯNG.mp3" preload="auto"></audio>
+
+  <!-- BONG BÓNG LỜI CHÚC -->
+  <div id="wish-bubbles-container"></div>
+
+  <!-- ENVELOPE OVERLAY -->
+  <div id="envelope-overlay">
+    <div id="envelope-wrap">
+      <div class="env-body">
+        <div class="env-bottom"></div>
+        <div class="env-left"></div>
+        <div class="env-right"></div>
+      </div>
+      <div id="env-flap"></div>
+      <div class="env-label">
+        <div class="env-name">Vũ Hiệp 🤍 Kim Ái</div>
+        <div class="env-date">12 / 07 / 2026</div>
+      </div>
+      <div class="env-hint">💌 Nhấn để mở thiệp</div>
+    </div>
+
+    <div id="env-letter">
+      <div class="letter-name">Vũ Hiệp 🤍 Kim Ái</div>
+      <div class="letter-date">12 / 07 / 2026</div>
+      <div class="letter-msg">Trân trọng kính mời bạn<br>tham dự lễ cưới của chúng mình 💕</div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <h1>Vũ Hiệp 🤍 Kim Ái</h1>
+    <p>----- 12 / 07 / 2026 ----- </p>
+  </section>
+
+  <!-- TABS -->
+  <section id="tabs">
+    <div class="tab-buttons">
+      <button class="tab-btn active" data-page="info-page">Thông tin</button>
+      <button class="tab-btn" data-page="timeline-page">Lịch trình</button>
+      <button class="tab-btn" data-page="gallery-page">Thư viện ảnh</button>
+      <button class="tab-btn" data-page="rsvp-page">Xác nhận tham dự</button>
+    </div>
+  </section>
+
+  <div id="page-wrapper">
+    <section id="info-page" class="page active">
+
+      <!-- THÔNG TIN GIA ĐÌNH -->
+      <section id="family-info" class="reveal-section">
+        <div class="family-columns">
+          <div class="family-col">
+            <p class="family-label">NHÀ TRAI</p>
+            <p>Ông. <strong>ĐẶNG VŨ HÀO</strong></p>
+            <p>Bà. <strong>TRẦN THỊ XUÂN MAI</strong></p>
+            <p>15 Nguyễn Hồng Đào</p>
+            <p>P. Tân Bình, TP. HCM</p>
+          </div>
+          <div class="family-divider">🔗</div>
+          <div class="family-col">
+            <p class="family-label">NHÀ GÁI</p>
+            <p>Ông. <strong>TẤT CHÍ NGUYÊN</strong></p>
+            <p>Bà. <strong>THẠCH SOM NANG</strong></p>
+            <p>611/55A Điện Biên Phủ</p>
+            <p>P. Bàn Cờ, TP. HCM</p>
+          </div>
+        </div>
+
+        <p class="invite-text">TRÂN TRỌNG BÁO TIN <strong>LỄ THÀNH HÔN</strong> CỦA CON CHÚNG TÔI</p>
+
+        <p class="groom-name">Đặng Trần Vũ Hiệp</p>
+        <div class="couple-roles">
+          <span>TRƯỞNG NAM</span>
+          <span>🔗</span>
+          <span>QUÝ NỮ</span>
+        </div>
+        <p class="bride-name">Tất Kim Ái</p>
+
+        <p class="ceremony-text">HÔN LỄ ĐƯỢC CỬ HÀNH TẠI TƯ GIA</p>
+        <p class="ceremony-time"><strong>08:00 | 12.07.2026</strong></p>
+        <p class="ceremony-lunar">Nhằm ngày 28 tháng 05 năm Bính Ngọ</p>
+      </section>
+
+      <!-- DATE & LOCATION -->
+      <section id="info" class="reveal-section">
+        <h2>Ngày & Địa điểm</h2>
+        <p class="reveal-item"><strong>Ngày:</strong> 12 / 07 / 2026</p>
+        <p class="reveal-item"><strong>Giờ:</strong> 17:00</p>
+        <p class="reveal-item"><strong>Địa điểm:</strong> Nhà hàng Diamond Place II </p>
+        <p class="reveal-item"> 584 Đ. Âu Cơ, Phường 10, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam </p>
+      </section>
+
+      <!-- COUNTDOWN -->
+      <section id="countdown" class="reveal-section">
+        <h2>Đếm ngược ngày cưới</h2>
+        <div id="countdown-box">
+          <div class="time-box reveal-item">
+            <span id="days" class="flip">0</span>
+            <small>Ngày</small>
+          </div>
+          <div class="time-box reveal-item">
+            <span id="hours" class="flip">0</span>
+            <small>Giờ</small>
+          </div>
+          <div class="time-box reveal-item">
+            <span id="minutes" class="flip">0</span>
+            <small>Phút</small>
+          </div>
+          <div class="time-box reveal-item">
+            <span id="seconds" class="flip">0</span>
+            <small>Giây</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAP -->
+      <section id="map" class="reveal-section">
+        <h2>Bản đồ</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3633.5873820227653!2d106.64048497504199!3d10.782543289366654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752eb20824063f%3A0x1e05528343d1b39b!2zRGlhbW9uZCBQbGFjZSBJSSAtIMOCdSBDxqEgLSBUcnVuZyB0w6JtIEjhu5lpIG5naOG7iyAtIFRp4buHYyBjxrDhu5tp!5e1!3m2!1svi!2sus!4v1768122884901!5m2!1svi!2sus"
+          width="100%" height="450" style="border:0; max-width: 600px;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </section>
+    </section>
+
+    <section id="timeline-page" class="page">
+      <!-- TIMELINE -->
+      <section id="timeline">
+        <h2>Lịch trình</h2>
+        <h2>Chủ Nhật | 12 / 07 / 2026</h2>
+
+        <div class="timeline-item">
+          <span class="time">18:00</span>
+          <p>🎉 Đón khách</p>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">18:30</span>
+          <p>💍 Lễ cưới</p>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">19:00</span>
+          <p>🍽️ Khai tiệc</p>
+        </div>
+      </section>
+    </section>
+
+    <section id="gallery-page" class="page">
+      <!-- GALLERY -->
+      <section id="gallery" class="reveal-section">
+        <h2>Khoảnh khắc của chúng mình</h2>
+        <div class="gallery-grid">
+          <img src="assets/images/gallery/anh1.jpg" alt="Photo 1" class="reveal-left">
+          <img src="assets/images/gallery/anh2.jpg" alt="Photo 2" class="reveal-right">
+          <img src="assets/images/gallery/anh3.jpg" alt="Photo 3" class="reveal-left">
+          <img src="assets/images/gallery/anh4.jpg" alt="Photo 4" class="reveal-right">
+          <img src="assets/images/gallery/anh5.jpg" alt="Photo 5" class="reveal-left">
+          <img src="assets/images/gallery/anh6.jpg" alt="Photo 6" class="reveal-right">
+          <img src="assets/images/gallery/anh7.jpg" alt="Photo 7" class="reveal-left">
+          <img src="assets/images/gallery/anh8.jpg" alt="Photo 8" class="reveal-right">
+          <img src="assets/images/gallery/anh9.jpg" alt="Photo 9" class="reveal-left">
+          <img src="assets/images/gallery/anh10.jpg" alt="Photo 10" class="reveal-right">
+          <img src="assets/images/gallery/anh11.jpg" alt="Photo 11" class="reveal-left">
+          <img src="assets/images/gallery/anh12.jpg" alt="Photo 12" class="reveal-right">
+        </div>
+      </section>
+    </section>
+
+    <section id="rsvp-page" class="page">
+      <!-- RSVP -->
+      <section id="rsvp" class="reveal-section">
+        <h2>Xác nhận tham dự</h2>
+
+        <form id="rsvp-form">
+          <input type="text" name="name" placeholder="Họ và tên" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="number" name="guests" placeholder="Số người tham dự" min="1" required>
+
+          <select name="attendance" required>
+            <option value="">Bạn có tham dự không?</option>
+            <option value="yes">Có tham dự</option>
+            <option value="no">Không tham dự</option>
+          </select>
+
+          <button type="submit">Gửi xác nhận</button>
+        </form>
+
+        <p id="rsvp-message"></p>
+
+        <!-- MỪNG CƯỚI - Gift Box -->
+        <div id="gift-section">
+          <p class="gift-text">Cảm ơn bạn đã đồng hành và chúc phúc cho hành trình yêu thương của chúng mình. Niềm vui hôm nay trọn vẹn hơn khi có bạn cùng sẻ chia 🌹</p>
+          <div id="gift-box" title="Nhấn để xem QR mừng cưới">🎁</div>
+        </div>
+
+      </section>
+    </section>
+  </div>
+
+  <!-- MUSIC TOGGLE BTN -->
+  <button id="music-btn" title="Bật/tắt nhạc">🎵</button>
+
+  <!-- FLOATING WISH INPUT -->
+  <div id="wish-float">
+    <input type="text" id="wish-name-input" placeholder="Tên bạn..." maxlength="30">
+    <textarea id="wish-text-input" placeholder="Gửi lời chúc..." rows="2" maxlength="120"></textarea>
+    <button id="wish-send-btn">Gửi 💌</button>
+  </div>
+
+  <!-- GIFT MODAL -->
+  <div id="gift-modal-overlay">
+    <div id="gift-modal">
+      <h3>🎁 Mừng cưới</h3>
+      <p class="modal-sub">Quét QR để gửi yêu thương trực tiếp tới:</p>
+      <div class="modal-qr-row">
+        <img src="assets/images/QRbank.jpg" alt="QR mừng cưới" id="qr-image">
+        <div class="modal-info">
+          <p class="modal-name">TAT KIM AI</p>
+          <p class="modal-bank"><strong>TPBank</strong></p>
+          <p class="modal-account"><strong>0000 0028 873</strong></p>
+        </div>
+      </div>
+      <button id="gift-modal-close">Đóng</button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="js/tabs.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/timeline.js"></script>
+  <script src="js/envelope.js"></script>
+  <script src="js/scroll-reveal.js"></script>
+  <script src="js/wish-bubbles.js"></script>
+  <script src="js/rsvp.js"></script>
+
+</body>
+</html>

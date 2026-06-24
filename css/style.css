@@ -1,0 +1,724 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* BODY */
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background: #fff;
+  color: #333;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+/* SECTION */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* HERO */
+#hero {
+  background: url('../assets/images/anh cong.jpg') center/cover no-repeat;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#hero h1,
+section h2 {
+  font-family: 'Dancing Script', cursive;
+}
+
+#hero h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+
+#hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.45);
+}
+
+/* TABS */
+#tabs {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 15;
+  padding: 10px 0;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 8px clamp(12px, 4vw, 100px);
+  border: 1px solid #d43737;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+}
+
+.tab-btn.active {
+  background: #d43737;
+  color: white;
+}
+
+/* INFO */
+#info p {
+  margin: 10px 0;
+}
+
+/* COUNTDOWN */
+#timer {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+/* TIMELINE */
+#timeline ul {
+  list-style: none;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#timeline li {
+  padding: 10px 0;
+  border-left: 3px solid #d43737;
+  padding-left: 15px;
+}
+
+/* GALLERY */
+.gallery-grid {
+  columns: 2;
+  column-gap: 12px;
+  margin-top: 30px;
+  padding: 0 8px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  break-inside: avoid;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    columns: 2;
+    column-gap: 8px;
+  }
+}
+
+/* RSVP */
+#rsvp form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#rsvp input,
+#rsvp select,
+#rsvp textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#rsvp textarea {
+  resize: vertical;
+}
+
+#rsvp button {
+  padding: 10px;
+  width: 100%;
+  background: #d43737;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+}
+
+#rsvp button:hover {
+  opacity: 0.9;
+}
+
+#rsvp-message {
+  margin-top: 14px;
+  font-size: 0.95rem;
+}
+
+/* GIFT QR */
+#gift-qr {
+  max-width: 400px;
+  margin: 40px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid #f0d0d0;
+}
+
+#gift-qr .gift-text {
+  font-family: 'Montserrat', sans-serif;
+  color: #d43737;
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+}
+
+#qr-image {
+  width: 180px;
+  max-width: 60%;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+/* MAP */
+#map iframe {
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* COUNTDOWN BOX */
+#countdown-box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background: #fff;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  width: 90px;
+  padding: 15px 10px;
+}
+
+.time-box span {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #d43737;
+}
+
+.time-box small {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* FLIP ANIMATION */
+.flip {
+  display: inline-block;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.flip.animate {
+  transform: rotateX(90deg);
+  opacity: 0;
+}
+
+/* COUNTDOWN URGENT */
+#countdown-box.urgent .time-box {
+  border-color: #d43737;
+}
+
+#countdown-box.urgent span {
+  color: #d43737;
+}
+
+/* TIMELINE */
+#timeline {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 20px 20px 20px 40px;
+  margin-bottom: 20px;
+  border-left: 3px solid #d43737;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.timeline-item .time {
+  font-weight: 600;
+  color: #d43737;
+}
+
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* SLIDE TAB SYSTEM */
+#page-wrapper {
+  display: flex;
+  width: 100%; /* 4 tab × 100% */
+  transition: transform 0.6s ease;
+}
+
+.page {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* TAB COLOR */
+.tab-btn {
+  border: 1px solid #d43737;
+  color: #d43737;
+}
+
+.tab-btn.active {
+  background: #d43737;
+  color: #fff;
+}
+
+
+
+/* MOBILE */
+@media (max-width: 600px) {
+  #hero h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* MUSIC BUTTON */
+#music-btn {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid #f48fb1;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  backdrop-filter: blur(4px);
+  transition: box-shadow 0.2s ease;
+}
+
+#music-btn:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+
+#music-btn.playing {
+  animation: spinDisc 3s linear infinite;
+}
+
+#music-btn.paused::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  height: 3px;
+  background: #d43737;
+  border-radius: 2px;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  pointer-events: none;
+}
+
+@keyframes spinDisc {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* FLOATING WISH INPUT */
+#wish-float {
+  position: fixed;
+  bottom: 20px;
+  left: 16px;
+  z-index: 60;
+  width: 220px;
+  background: rgba(255,255,255,0.93);
+  border: 1px solid #f48fb1;
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 4px 16px rgba(233,30,99,0.12);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#wish-float input,
+#wish-float textarea {
+  width: 100%;
+  border: 1px solid #f8bbd0;
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: #880e4f;
+  resize: none;
+  outline: none;
+}
+#wish-send-btn {
+  background: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 7px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+#wish-send-btn:hover { opacity: 0.85; }
+
+/* GIFT BOX */
+#gift-section {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #f0d0d0;
+}
+#gift-section .gift-text {
+  color: #d43737;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+#gift-box {
+  font-size: 3.5rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  animation: none;
+}
+#gift-box:hover {
+  animation: giftShake 0.5s ease infinite;
+}
+@keyframes giftShake {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(8deg); }
+  60% { transform: rotate(-5deg); }
+  80% { transform: rotate(5deg); }
+}
+
+/* GIFT MODAL */
+#gift-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+#gift-modal-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+#gift-modal {
+  background: white;
+  border-radius: 20px;
+  padding: 28px 24px;
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+#gift-modal-overlay.show #gift-modal {
+  transform: scale(1);
+}
+#gift-modal h3 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  color: #880e4f;
+  margin-bottom: 6px;
+}
+.modal-sub {
+  font-size: 0.88rem;
+  color: #888;
+  margin-bottom: 16px;
+}
+.modal-qr-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fce4ec;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+#qr-image {
+  width: 90px;
+  border-radius: 8px;
+  border: 1px solid #f48fb1;
+  flex-shrink: 0;
+}
+.modal-name {
+  font-weight: 700;
+  color: #880e4f;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+.modal-bank, .modal-account {
+  font-size: 0.85rem;
+  color: #555;
+}
+#gift-modal-close {
+  padding: 10px 32px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #555;
+}
+#gift-modal-close:hover { background: #f5f5f5; }
+
+/* MOBILE adjustments */
+@media (max-width: 600px) {
+  #wish-float { width: 180px; }
+  #music-btn { top: 12px; right: 12px; }
+}
+
+/* FAMILY INFO SECTION */
+#family-info {
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 1px solid #f0d0d0;
+}
+
+.family-columns {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.family-col {
+  flex: 1;
+  min-width: 130px;
+  max-width: 200px;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.family-label {
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.family-divider {
+  font-size: 1.4rem;
+  padding-top: 4px;
+  color: #d43737;
+}
+
+.invite-text {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.groom-name,
+.bride-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2rem, 9vw, 3.2rem);
+  color: #c0392b;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 6px 0;
+}
+
+.couple-roles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #555;
+  margin: 8px 0;
+}
+
+.ceremony-text {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #444;
+  margin-top: 20px;
+}
+
+.ceremony-time {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+  margin: 6px 0;
+}
+
+.ceremony-lunar {
+  font-size: 13px;
+  color: #666;
+  letter-spacing: 1px;
+}
+
+/* FAMILY INFO SECTION */
+#family-info {
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 1px solid #f0d0d0;
+}
+
+.family-columns {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.family-col {
+  flex: 1;
+  max-width: 200px;
+  text-align: center;
+}
+
+.family-label {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.family-col strong {
+  color: #333;
+  font-size: 15px;
+}
+
+.family-col p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+  color: #444;
+}
+
+.family-divider {
+  font-size: 1.4rem;
+  padding-top: 8px;
+  color: #d43737;
+  flex-shrink: 0;
+}
+
+.invite-text {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.invite-text strong {
+  color: #222;
+}
+
+/* TÊN CHÚ RỂ + CÔ DÂU - chữ thư pháp đỏ */
+.groom-name,
+.bride-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.2rem, 9vw, 3.5rem);
+  color: #c0392b;
+  margin: 8px 0;
+  line-height: 1.2;
+}
+
+.couple-roles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #666;
+  margin: 4px 0 8px;
+}
+
+.couple-roles span:nth-child(2) {
+  color: #d43737;
+  font-size: 1.2rem;
+}
+
+.ceremony-text {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  color: #555;
+  margin-top: 24px;
+}
+
+.ceremony-time {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #222;
+  margin: 6px 0;
+  letter-spacing: 1px;
+}
+
+.ceremony-lunar {
+  font-size: 13px;
+  color: #888;
+  letter-spacing: 1px;
+}
