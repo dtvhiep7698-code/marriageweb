@@ -20,7 +20,7 @@ function createBubble(container, wish) {
   const offset = Math.floor(Math.random() * 20) - 10;
   bubble.style.marginLeft = `${offset}px`;
   container.appendChild(bubble);
-  setTimeout(() => bubble.remove(), 8000);
+  setTimeout(() => bubble.remove(), 4500);
 }
 
 function startBubbles() {
@@ -37,26 +37,31 @@ function startBubbles() {
   }, 2000);
 }
 
-// --- Floating wish input ---
+// --- Floating wish toggle ---
 function initWishFloat() {
+  const toggle = document.getElementById("wish-toggle");
+  const float = document.getElementById("wish-float");
   const sendBtn = document.getElementById("wish-send-btn");
-  if (!sendBtn) return;
+  if (!toggle || !float) return;
+
+  toggle.addEventListener("click", () => {
+    float.classList.toggle("expanded");
+  });
 
   sendBtn.addEventListener("click", () => {
     const name = document.getElementById("wish-name-input").value.trim();
     const msg = document.getElementById("wish-text-input").value.trim();
     if (!name || !msg) return;
 
-    // Thêm vào danh sách và tạo bubble ngay lập tức
     const newWish = { name, msg };
     userWishes.push(newWish);
     allWishes.push(newWish);
     const container = document.getElementById("wish-bubbles-container");
     createBubble(container, newWish);
 
-    // Reset input
     document.getElementById("wish-name-input").value = "";
     document.getElementById("wish-text-input").value = "";
+    float.classList.remove("expanded");
   });
 }
 

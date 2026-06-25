@@ -63,7 +63,7 @@
       <button class="tab-btn active" data-page="info-page">Thông tin</button>
       <button class="tab-btn" data-page="timeline-page">Lịch trình</button>
       <button class="tab-btn" data-page="gallery-page">Thư viện ảnh</button>
-      <button class="tab-btn" data-page="rsvp-page">Xác nhận tham dự</button>
+      <button class="tab-btn" data-page="rsvp-page">Mừng cưới</button>
     </div>
   </section>
 
@@ -193,25 +193,8 @@
     </section>
 
     <section id="rsvp-page" class="page">
-      <!-- RSVP -->
       <section id="rsvp" class="reveal-section">
-        <h2>Xác nhận tham dự</h2>
-
-        <form id="rsvp-form">
-          <input type="text" name="name" placeholder="Họ và tên" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <input type="number" name="guests" placeholder="Số người tham dự" min="1" required>
-
-          <select name="attendance" required>
-            <option value="">Bạn có tham dự không?</option>
-            <option value="yes">Có tham dự</option>
-            <option value="no">Không tham dự</option>
-          </select>
-
-          <button type="submit">Gửi xác nhận</button>
-        </form>
-
-        <p id="rsvp-message"></p>
+        <h2>Mừng cưới</h2>
 
         <!-- MỪNG CƯỚI - Gift Box -->
         <div id="gift-section">
@@ -227,10 +210,13 @@
   <button id="music-btn" title="Bật/tắt nhạc">🎵</button>
 
   <!-- FLOATING WISH INPUT -->
-  <div id="wish-float">
-    <input type="text" id="wish-name-input" placeholder="Tên bạn..." maxlength="30">
-    <textarea id="wish-text-input" placeholder="Gửi lời chúc..." rows="2" maxlength="120"></textarea>
-    <button id="wish-send-btn">Gửi 💌</button>
+  <div id="wish-float" class="collapsed">
+    <button id="wish-toggle">💌</button>
+    <div id="wish-form">
+      <input type="text" id="wish-name-input" placeholder="Tên bạn..." maxlength="30">
+      <textarea id="wish-text-input" placeholder="Gửi lời chúc..." rows="2" maxlength="120"></textarea>
+      <button id="wish-send-btn">Gửi 💌</button>
+    </div>
   </div>
 
   <!-- GIFT MODAL -->

@@ -5,42 +5,44 @@ if ("scrollRestoration" in history) {
 window.scrollTo(0, 0);
 
 const tabButtons = document.querySelectorAll(".tab-btn");
-const wrapper = document.getElementById("page-wrapper");
 
-tabButtons.forEach((btn, index) => {
+// Map tab -> section id
+const tabTargets = {
+  "info-page":     "info-page",
+  "timeline-page": "timeline-page",
+  "gallery-page":  "gallery-page",
+  "rsvp-page":     "rsvp-page"
+};
+
+tabButtons.forEach(btn => {
   btn.addEventListener("click", () => {
+    const pageId = btn.getAttribute("data-page");
+    const target = document.getElementById(pageId);
+    if (!target) return;
+
     // active tab
     tabButtons.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
 
-    // slide page
-    wrapper.style.transform = `translateX(-${index * 100}%)`;
-
-    // trigger reveal cho các item trong tab mới
-    const pages = document.querySelectorAll(".page");
-    const targetPage = pages[index];
-    if (!targetPage) return;
-
-    const sections = targetPage.querySelectorAll(".reveal-section");
-    const items = targetPage.querySelectorAll(".reveal-item");
-    const sideItems = targetPage.querySelectorAll(".reveal-left, .reveal-right");
-
-    sections.forEach(el => {
-      el.classList.remove("show");
-      void el.offsetWidth;
-      setTimeout(() => el.classList.add("show"), 80);
-    });
-
-    items.forEach((el, i) => {
-      el.classList.remove("show");
-      void el.offsetWidth;
-      setTimeout(() => el.classList.add("show"), 80 + i * 180);
-    });
-
-    sideItems.forEach((el, i) => {
-      el.classList.remove("show");
-      void el.offsetWidth;
-      setTimeout(() => el.classList.add("show"), 80 + i * 120);
-    });
+    // scroll tới section
+    const tabBar = document.getElementById("tabs");
+    const offset = tabBar ? tabBar.offsetHeight : 0;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset - 10;
+    window.scrollTo({ top, behavior: "smooth" });
   });
 });
+
+// Highlight tab khi scroll tới section
+const sections = document.querySelectorAll(".page");
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      tabButtons.forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-page") === id);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+
+sections.forEach(s => observer.observe(s));
