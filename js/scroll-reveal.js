@@ -4,13 +4,12 @@ function initScrollReveal() {
   const sections = document.querySelectorAll(".reveal-section");
   const items = document.querySelectorAll(".reveal-item");
   const sideItems = document.querySelectorAll(".reveal-left, .reveal-right");
+  const timelineItems = document.querySelectorAll(".timeline-item");
 
   const sectionObserver = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
+        if (entry.isIntersecting) entry.target.classList.add("show");
       });
     },
     { threshold: 0.15 }
@@ -19,9 +18,7 @@ function initScrollReveal() {
   const itemObserver = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
+        if (entry.isIntersecting) entry.target.classList.add("show");
       });
     },
     { threshold: 0.2 }
@@ -30,12 +27,19 @@ function initScrollReveal() {
   const sideObserver = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
+        if (entry.isIntersecting) entry.target.classList.add("show");
       });
     },
     { threshold: 0.1 }
+  );
+
+  const timelineObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    },
+    { threshold: 0.1, rootMargin: "0px 0px -30px 0px" }
   );
 
   sections.forEach(section => sectionObserver.observe(section));
@@ -46,6 +50,10 @@ function initScrollReveal() {
   sideItems.forEach((item, index) => {
     item.style.transitionDelay = `${(index % 4) * 0.25}s`;
     sideObserver.observe(item);
+  });
+  timelineItems.forEach((item, index) => {
+    item.style.transitionDelay = `${index * 0.2}s`;
+    timelineObserver.observe(item);
   });
 }
 
