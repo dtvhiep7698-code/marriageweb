@@ -754,3 +754,70 @@ section h2 {
   color: #888;
   letter-spacing: 1px;
 }
+
+/* AUTO-SCROLL BUTTON */
+#autoscroll-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 16px;
+  z-index: 100;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #f48fb1;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  backdrop-filter: blur(4px);
+  transition: transform 0.2s ease, background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d43737;
+}
+#autoscroll-btn:hover { transform: scale(1.1); }
+#autoscroll-btn.scrolling {
+  background: #f48fb1;
+  color: white;
+}
+
+/* FAMILY INFO - ảnh xen kẽ tên */
+.family-photo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.family-photo-row img {
+  width: 100px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+
+.family-name-block {
+  text-align: center;
+  flex: 1;
+  max-width: 140px;
+}
+
+.family-role {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: #888;
+  margin-bottom: 4px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ẢNH NHÀ HÀNG */
+.venue-photo {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  margin-top: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}

@@ -1,13 +1,13 @@
 // Wish bubbles + floating input + music button + gift modal
 
-const sampleWishes = [
+//const sampleWishes = [
   { name: "Minh Anh", msg: "Chúc hai bạn trăm năm hạnh phúc! 💕" },
   { name: "Thảo Vy", msg: "Chúc mừng đám cưới, mãi yêu thương nhau nhé!" },
   { name: "Quốc Bảo", msg: "Chúc cô dâu chú rể bách niên giai lão 🥂" },
   { name: "Ngọc Hân", msg: "Tình yêu đẹp như mơ, chúc hai bạn luôn hạnh phúc!" },
   { name: "Đức Anh", msg: "Chúc anh chị sớm có tin vui nhé! 🎉" },
   { name: "Bích Trâm", msg: "Chúc hai bạn luôn bên nhau trọn đời 💍" }
-];
+//];
 
 let userWishes = [];
 let allWishes = [...sampleWishes];
