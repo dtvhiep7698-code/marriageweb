@@ -792,13 +792,20 @@ section h2 {
 }
 
 .family-photo-row img {
-  width: 100px;
-  height: 140px;
+  /* 1. Tăng kích thước hình ảnh (Bạn có thể tăng thêm số px nếu muốn to hơn nữa) */
+  width: 180px;
+  height: 240px;
+  
+  /* Giữ nguyên thuộc tính này để ảnh không bị móp méo khi tăng kích thước */
   object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+  
+  /* 2. Thêm khung viền quanh tấm hình */
+  border: 4px solid #d4af37; /* Khung dày 4px, màu vàng gold sang trọng cho đám cưới */
+  
+  /* 3. Giữ lại và điều chỉnh bo góc + đổ bóng cũ của bạn cho hợp với kích thước mới */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
-
 .family-name-block {
   text-align: center;
   flex: 1;
