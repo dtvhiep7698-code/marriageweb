@@ -122,37 +122,41 @@ section h2 {
   padding-left: 15px;
 }
 
-/* GALLERY */
+/* GALLERY - CẬP NHẬT MỚI */
 .gallery-grid {
-  columns: 2;
-  column-gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Máy tính hiển thị 3 cột đều tăm tắp */
+  gap: 15px;                             /* Khoảng cách đồng đều giữa các ảnh */
   margin-top: 30px;
-  padding: 0 8px;
+  padding: 0 16px;
 }
 
 .gallery-grid img {
   width: 100%;
-  height: auto;
+  height: 250px;       /* Cố định chiều cao để các ô ảnh bằng nhau, thẳng hàng đứng */
+  object-fit: cover;   /* Giúp ảnh không bị móp hay méo khi ép chiều cao */
   display: block;
-  margin-bottom: 12px;
   border-radius: 8px;
   cursor: pointer;
-  break-inside: avoid;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-grid img:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
+/* ĐIỀU CHỈNH KHI XEM TRÊN ĐIỆN THOẠI */
 @media (max-width: 600px) {
   .gallery-grid {
-    columns: 2;
-    column-gap: 8px;
+    grid-template-columns: repeat(2, 1fr); /* Điện thoại tự chia làm 2 cột bằng chằn chặn */
+    gap: 8px;                             /* Thu hẹp khoảng cách trên điện thoại */
+    padding: 0 8px;
+  }
+  .gallery-grid img {
+    height: 160px;                        /* Hạ chiều cao xuống một chút cho vừa vặn màn hình nhỏ */
   }
 }
-
 /* RSVP */
 #rsvp form {
   max-width: 400px;
