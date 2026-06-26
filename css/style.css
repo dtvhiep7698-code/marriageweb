@@ -893,24 +893,41 @@ section h2 {
 }
 
 .cal-day.cal-marked {
-  background: #c0392b;
-  color: white;
+  /* 1. Đổi màu chữ ngày cưới thành màu đỏ/đen (vì không dùng nền tròn đỏ nữa, chữ trắng sẽ bị chìm) */
+  color: #c0392b; 
   font-weight: 700;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
+  
+  /* 2. Tạo kích thước cho ô ngày cưới */
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  box-shadow: 0 2px 8px rgba(192, 57, 43, 0.4);
-  animation: calPulse 2s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+  
+  /* 3. Chèn hình trái tim nét vẽ bút lông làm nền */
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M92.3,16.5 C83.6,5.1 66.8,4.7 56.4,14.6 C53.2,17.7 51,20.4 50,22 C49,20.4 46.8,17.7 43.6,14.6 C33.2,4.7 16.4,5.1 7.7,16.5 C-2.4,29.8 -1.2,50.7 11.2,64.8 L44.8,96.8 C47.7,99.6 52.3,99.6 55.2,96.8 L88.8,64.8 C101.2,50.7 102.4,29.8 92.3,16.5 Z' fill='none' stroke='%23c0392b' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' stroke-dasharray='120 10' /></svg>") no-repeat center/contain;
+  
+  /* 4. Loại bỏ bo tròn, bóng đổ cũ của nút tròn */
+  border-radius: 0;
+  box-shadow: none;
+  
+  /* 5. Giữ lại hiệu ứng nhịp đập nhẹ nhàng cho trái tim */
+  animation: heartPulse 2s ease-in-out infinite;
 }
 
-@keyframes calPulse {
+/* Hiệu ứng nhịp đập (Phóng to/thu nhỏ nhẹ) cho trái tim */
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+/*@keyframes calPulse {
   0%, 100% { box-shadow: 0 2px 8px rgba(192, 57, 43, 0.4); }
   50% { box-shadow: 0 2px 16px rgba(192, 57, 43, 0.7); }
-}
+}*/
 
 .cal-footer {
   margin-top: 14px;
