@@ -122,11 +122,11 @@ section h2 {
   padding-left: 15px;
 }
 
-/* GALLERY - GIỮ NGUYÊN TỈ LỆ ẢNH GỐC */
+/* GALLERY - SỬA LỖI TRỐNG CỘT & GIỮ HIỆU ỨNG CHẠY 2 BÊN */
 .gallery-grid {
-  /* Sử dụng lại CSS Columns nhưng ép trình duyệt render lại chính xác */
-  column-count: 3;       /* Máy tính hiển thị 3 cột ảnh xếp gạch */
-  column-gap: 16px;      /* Khoảng cách giữa các cột */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Máy tính chia 3 cột đều */
+  gap: 16px;                             /* Khoảng cách giữa các ảnh */
   margin-top: 30px;
   padding: 0 16px;
   width: 100%;
@@ -134,17 +134,14 @@ section h2 {
 
 .gallery-grid img {
   width: 100%;
-  height: auto;          /* Giữ nguyên chiều cao gốc, không cắt xén một pixel nào */
+  height: auto;          /* Giữ nguyên tỉ lệ ảnh gốc, không bị cắt xén */
   display: block;
-  margin-bottom: 16px;   /* Khoảng cách giữa các ảnh trên dưới trong cùng một cột */
   border-radius: 8px;
   cursor: pointer;
-  
-  /* HAI THUỘC TÍNH QUAN TRỌNG: Sửa lỗi mất ảnh trên máy tính và lệch hàng */
-  break-inside: avoid;   
-  transform: translateZ(0); /* Ép trình duyệt kích hoạt tăng tốc phần cứng, sửa triệt để lỗi ẩn ảnh */
-  
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  /* Đảm bảo không bị xung đột với các class animation chạy từ 2 bên vào của bạn */
+  will-change: transform, opacity; 
 }
 
 .gallery-grid img:hover {
@@ -152,15 +149,12 @@ section h2 {
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-/* ĐIỀU CHỈNH ĐỀU 2 CỘT CHO ĐIỆN THOẠI */
+/* SỬA LỖI TRÊN ĐIỆN THOẠI (DƯỚI 600PX) */
 @media (max-width: 600px) {
   .gallery-grid {
-    column-count: 2;     /* Điện thoại chia chính xác thành 2 cột xếp gạch */
-    column-gap: 10px;    /* Khoảng cách giữa 2 cột trên mobile */
+    grid-template-columns: repeat(2, 1fr); /* Chia 2 cột đều chằn chặn bên trái và phải */
+    gap: 10px;                            /* Khoảng cách nhỏ lại cho đẹp trên mobile */
     padding: 0 10px;
-  }
-  .gallery-grid img {
-    margin-bottom: 10px; /* Khoảng cách trên dưới trên mobile */
   }
 }
 
