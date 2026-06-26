@@ -39,7 +39,7 @@ function initEnvelope() {
           startAutoScroll(); // Kích hoạt tự động cuộn trang
           updateBtn();       // Cập nhật icon nút thành dấu tạm dừng ⏸
         }
-      }, 1500); // 1500ms = 1.5 giây. Thay bằng 2000 nếu muốn chờ hẳn 2 giây.
+      }, 2000); // 2000ms = 2 giây. Thay bằng 2000 nếu muốn chờ hẳn 2 giây.
     }, 3600);
   });
 }
