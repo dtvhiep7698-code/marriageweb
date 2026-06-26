@@ -2,7 +2,7 @@
 
 let scrollInterval = null;
 let isScrolling = false;
-const SCROLL_SPEED = 0.8; // px mỗi frame
+const SCROLL_SPEED = 1.5; // px mỗi frame
 
 function startAutoScroll() {
   if (scrollInterval) return;

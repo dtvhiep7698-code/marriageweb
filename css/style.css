@@ -828,3 +828,95 @@ section h2 {
   margin-top: 16px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
+/* WEDDING CALENDAR */
+#calendar-section {
+  padding: 40px 20px 20px;
+}
+
+#wedding-calendar {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #e0c9c9;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 20px rgba(180, 60, 60, 0.1);
+  min-width: 260px;
+  max-width: 320px;
+}
+
+.cal-header {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.cal-month {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+  color: #c0392b;
+  font-weight: 700;
+}
+
+.cal-year {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: #888;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+
+.cal-day-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #aaa;
+  padding: 4px 0;
+  letter-spacing: 0.5px;
+}
+
+.cal-empty { background: transparent; }
+
+.cal-day {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #555;
+  padding: 5px 2px;
+  border-radius: 50%;
+  line-height: 1.4;
+}
+
+.cal-day.cal-marked {
+  background: #c0392b;
+  color: white;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(192, 57, 43, 0.4);
+  animation: calPulse 2s ease-in-out infinite;
+}
+
+@keyframes calPulse {
+  0%, 100% { box-shadow: 0 2px 8px rgba(192, 57, 43, 0.4); }
+  50% { box-shadow: 0 2px 16px rgba(192, 57, 43, 0.7); }
+}
+
+.cal-footer {
+  margin-top: 14px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.1rem;
+  color: #c0392b;
+  text-align: center;
+  letter-spacing: 1px;
+}
