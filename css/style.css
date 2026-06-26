@@ -282,12 +282,18 @@ section h2 {
 #timeline {
   max-width: 500px;
   margin: 0 auto;
+  padding: 24px 20px 20px;
+}
+
+/* Override section padding cho timeline page */
+#timeline-page section {
+  padding: 20px 20px;
 }
 
 .timeline-item {
   position: relative;
-  padding: 20px 20px 20px 40px;
-  margin-bottom: 20px;
+  padding: 10px 16px 10px 32px;
+  margin-bottom: 10px;
   border-left: 3px solid #d43737;
   opacity: 0;
   transform: translateY(20px);

@@ -48,7 +48,7 @@ function initScrollReveal() {
     itemObserver.observe(item);
   });
   sideItems.forEach((item, index) => {
-    item.style.transitionDelay = `${(index % 4) * 0.25}s`;
+    item.style.transitionDelay = `${(index % 4) * 0.45}s`;
     sideObserver.observe(item);
   });
   timelineItems.forEach((item, index) => {
