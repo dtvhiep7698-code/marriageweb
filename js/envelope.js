@@ -33,6 +33,10 @@ function initEnvelope() {
           // Trình duyệt chặn autoplay, bỏ qua im lặng
         });
       }
+      // Bắt đầu auto-scroll sau khi trang hiện ra
+      if (typeof triggerAutoScrollStart === "function") {
+        triggerAutoScrollStart();
+      }
     }, 3600);
   });
 }
