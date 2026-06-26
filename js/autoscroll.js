@@ -27,7 +27,7 @@ function updateBtn() {
   const btn = document.getElementById("autoscroll-btn");
   if (!btn) return;
   if (isScrolling) {
-    btn.textContent = "⏸";
+    btn.textContent = "⏸️";
     btn.title = "Dừng cuộn tự động";
     btn.classList.add("scrolling");
   } else {
