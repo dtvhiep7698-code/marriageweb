@@ -122,22 +122,28 @@ section h2 {
   padding-left: 15px;
 }
 
-/* GALLERY - CẬP NHẬT MỚI */
+/* GALLERY - GIỮ NGUYÊN TỈ LỆ ẢNH GỐC */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Máy tính hiển thị 3 cột đều tăm tắp */
-  gap: 15px;                             /* Khoảng cách đồng đều giữa các ảnh */
+  /* Sử dụng lại CSS Columns nhưng ép trình duyệt render lại chính xác */
+  column-count: 3;       /* Máy tính hiển thị 3 cột ảnh xếp gạch */
+  column-gap: 16px;      /* Khoảng cách giữa các cột */
   margin-top: 30px;
   padding: 0 16px;
+  width: 100%;
 }
 
 .gallery-grid img {
   width: 100%;
-  height: 250px;       /* Cố định chiều cao để các ô ảnh bằng nhau, thẳng hàng đứng */
-  object-fit: cover;   /* Giúp ảnh không bị móp hay méo khi ép chiều cao */
+  height: auto;          /* Giữ nguyên chiều cao gốc, không cắt xén một pixel nào */
   display: block;
+  margin-bottom: 16px;   /* Khoảng cách giữa các ảnh trên dưới trong cùng một cột */
   border-radius: 8px;
   cursor: pointer;
+  
+  /* HAI THUỘC TÍNH QUAN TRỌNG: Sửa lỗi mất ảnh trên máy tính và lệch hàng */
+  break-inside: avoid;   
+  transform: translateZ(0); /* Ép trình duyệt kích hoạt tăng tốc phần cứng, sửa triệt để lỗi ẩn ảnh */
+  
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -146,17 +152,18 @@ section h2 {
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-/* ĐIỀU CHỈNH KHI XEM TRÊN ĐIỆN THOẠI */
+/* ĐIỀU CHỈNH ĐỀU 2 CỘT CHO ĐIỆN THOẠI */
 @media (max-width: 600px) {
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr); /* Điện thoại tự chia làm 2 cột bằng chằn chặn */
-    gap: 8px;                             /* Thu hẹp khoảng cách trên điện thoại */
-    padding: 0 8px;
+    column-count: 2;     /* Điện thoại chia chính xác thành 2 cột xếp gạch */
+    column-gap: 10px;    /* Khoảng cách giữa 2 cột trên mobile */
+    padding: 0 10px;
   }
   .gallery-grid img {
-    height: 160px;                        /* Hạ chiều cao xuống một chút cho vừa vặn màn hình nhỏ */
+    margin-bottom: 10px; /* Khoảng cách trên dưới trên mobile */
   }
 }
+
 /* RSVP */
 #rsvp form {
   max-width: 400px;
