@@ -33,11 +33,13 @@ function initEnvelope() {
           // Trình duyệt chặn autoplay, bỏ qua im lặng
         });
       }
-      // Bắt đầu auto-scroll sau khi trang hiện ra
-      if (typeof startAutoScroll === "function") {
-        startAutoScroll(); // Kích hoạt tự động cuộn trang
-        updateBtn();       // Cập nhật icon nút thành dấu tạm dừng ⏸
-      }
+      // ĐOẠN SỬA Ở ĐÂY: Chờ thêm 1.5 giây nữa rồi mới tự động cuộn
+      setTimeout(() => {
+        if (typeof startAutoScroll === "function") {
+          startAutoScroll(); // Kích hoạt tự động cuộn trang
+          updateBtn();       // Cập nhật icon nút thành dấu tạm dừng ⏸
+        }
+      }, 1500); // 1500ms = 1.5 giây. Thay bằng 2000 nếu muốn chờ hẳn 2 giây.
     }, 3600);
   });
 }
