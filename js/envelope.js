@@ -34,8 +34,9 @@ function initEnvelope() {
         });
       }
       // Bắt đầu auto-scroll sau khi trang hiện ra
-      if (typeof triggerAutoScrollStart === "function") {
-        triggerAutoScrollStart();
+      if (typeof startAutoScroll === "function") {
+        startAutoScroll(); // Kích hoạt tự động cuộn trang
+        updateBtn();       // Cập nhật icon nút thành dấu tạm dừng ⏸
       }
     }, 3600);
   });
