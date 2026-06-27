@@ -948,3 +948,10 @@ section h2 {
   text-align: center;
   letter-spacing: 1px;
 }
+/* GALLERY title tách độc lập */
+#gallery-title {
+  padding-bottom: 0;
+}
+#gallery {
+  padding-top: 16px;
+}
